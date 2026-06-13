@@ -1,0 +1,226 @@
+| Express           | Django                     |
+| ----------------- | -------------------------- |
+| `npm install`     | `pip install`              |
+| `node_modules`    | `venv`                     |
+| `server.js`       | `manage.py`                |
+| Routes            | `urls.py`                  |
+| Controllers       | `views.py`                 |
+| Mongoose Models   | `models.py`                |
+| Prisma migrations | `python manage.py migrate` |
+
+venv\Scripts\activate
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py startapp <app_name>
+
+# Django Commands Cheat Sheet
+
+## Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+## Activate Virtual Environment
+
+### Windows PowerShell
+
+```bash
+venv\Scripts\activate
+```
+
+### Windows CMD
+
+```bash
+venv\Scripts\activate.bat
+```
+
+### Mac/Linux
+
+```bash
+source venv/bin/activate
+```
+
+## Deactivate Virtual Environment
+
+```bash
+deactivate
+```
+
+---
+
+## Install Django
+
+```bash
+pip install django
+```
+
+## Check Django Version
+
+```bash
+django-admin --version
+```
+
+## Save Dependencies
+
+```bash
+pip freeze > requirements.txt
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Create a Django Project
+
+```bash
+django-admin startproject config .
+```
+
+## Run Development Server
+
+```bash
+python manage.py runserver
+```
+
+Run on a custom port:
+
+```bash
+python manage.py runserver 8001
+```
+
+---
+
+## Create a Django App
+
+```bash
+python manage.py startapp home
+```
+
+Example apps:
+
+```bash
+python manage.py startapp students
+python manage.py startapp accounts
+python manage.py startapp products
+```
+
+---
+
+## Database Migrations
+
+Create migration files:
+
+```bash
+python manage.py makemigrations
+```
+
+Apply migrations:
+
+```bash
+python manage.py migrate
+```
+
+Show migration status:
+
+```bash
+python manage.py showmigrations
+```
+
+---
+
+## Create Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+Admin URL:
+
+```
+http://127.0.0.1:8000/admin/
+```
+
+---
+
+## Django Shell
+
+Open shell:
+
+```bash
+python manage.py shell
+```
+
+Exit shell:
+
+```python
+exit()
+```
+
+---
+
+## Collect Static Files (Production)
+
+```bash
+python manage.py collectstatic
+```
+
+---
+
+## Common URLs
+
+Home:
+
+```
+http://127.0.0.1:8000/
+```
+
+Admin:
+
+```
+http://127.0.0.1:8000/admin/
+```
+
+Students Example:
+
+```
+http://127.0.0.1:8000/students/
+```
+
+---
+
+## Typical Workflow
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install django
+django-admin startproject config .
+python manage.py startapp home
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+---
+
+## MERN → Django Mapping
+
+| MERN            | Django                     |
+| --------------- | -------------------------- |
+| npm install     | pip install                |
+| node_modules    | venv                       |
+| package.json    | requirements.txt           |
+| Express App     | Django Project             |
+| Feature Folder  | Django App                 |
+| Mongoose Schema | Django Model               |
+| Prisma Migrate  | makemigrations + migrate   |
+| npm start       | python manage.py runserver |
+| MongoDB Compass | Django Admin               |
