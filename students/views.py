@@ -52,3 +52,17 @@ def student_edit(request, id):
             "studentSingleForm": studentSingleForm,
         },
     )
+
+
+def student_delete(request, id):
+    student = get_object_or_404(Student, id=id)
+    if request.method == "POST":
+        student.delete()
+        return redirect("students:students_list")
+    return render(
+        request,
+        "home/student_delete.html",
+        {
+            "student": student,
+        },
+    )

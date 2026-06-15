@@ -16,7 +16,11 @@
   <tbody>
     {% for student in students %}
     <tr>
-      <td>{{ student.id }}</td>
+      <td>
+        <a href="{% url 'students:students_delete' student.id %}">
+          {{ student.id }}
+        </a>
+      </td>
       <td>
         <a href="{% url 'students:students_edit' student.id %}">
           {{ student.name }}

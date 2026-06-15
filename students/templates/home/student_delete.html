@@ -1,0 +1,32 @@
+{% extends 'layout.html' %} {% block title %} Student List {% endblock %}
+{%block content %}
+
+<h1 class="mb-4">Student</h1>
+
+<ul>
+  <li>{{student.id}}</li>
+  <li>{{student.name}}</li>
+  <li>{{student.age}}</li>
+  <li>{{student.city}}</li>
+</ul>
+
+<form method="POST">
+  {% csrf_token %}
+
+  <button type="submit" class="btn btn-danger">Delete</button>
+
+  <a href="{% url 'students:students_list' %}" class="btn btn-secondary">
+    Cancel
+  </a>
+</form>
+
+<a href="{% url 'students:home' %}" class="btn btn-outline-primary mt-3"
+  >Back to Home</a
+>
+<a
+  href="{% url 'students:students_create' %}"
+  class="btn btn-outline-primary mt-3"
+  >Create student</a
+>
+
+{% endblock %}
