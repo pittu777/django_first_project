@@ -17,7 +17,12 @@
     {% for student in students %}
     <tr>
       <td>{{ student.id }}</td>
-      <td>{{ student.name }}</td>
+      <td>
+        <a href="{% url 'students:students_edit' student.id %}">
+          {{ student.name }}
+        </a>
+      </td>
+
       <td>{{ student.age }}</td>
       <td>{{ student.city }}</td>
     </tr>
@@ -30,6 +35,11 @@
 </table>
 <a href="{% url 'students:home' %}" class="btn btn-outline-primary mt-3"
   >Back to Home</a
+>
+<a
+  href="{% url 'students:students_create' %}"
+  class="btn btn-outline-primary mt-3"
+  >Create student</a
 >
 
 {% endblock %}

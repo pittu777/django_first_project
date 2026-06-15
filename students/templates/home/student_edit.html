@@ -1,0 +1,25 @@
+{% extends 'layout.html' %} {% block title %} Student Create {% endblock %}
+{%block content %}
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Edit Student</h1>
+
+    <a href="{% url 'students:students_list' %}" class="btn btn-secondary">
+      Back to List
+    </a>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <form method="POST">
+        {% csrf_token %} {{ studentSingleForm }}
+        <button type="submit" class="btn btn-primary">
+          Save edited Student
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
